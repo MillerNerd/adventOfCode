@@ -3,16 +3,13 @@ const fs = require('fs')
 const inputArray = fs.readFileSync('./input.txt', 'utf8')
     .split('\n')
     .map(Number)
-// console.log(data)
 
-let increased = 0
+console.log(inputArray.reduce(countDepthIncreases, 0))
 
-inputArray.reduce(depthIncreases)
-function depthIncreases(prev, curr) {
-    if (curr > prev) {
-        increased++
+function countDepthIncreases(count, curr, index, array) {
+    if (curr > array[index - 1]) {
+        return count + 1
+    } else {
+        return count
     }
-    return curr
 }
-
-console.log(increased)
