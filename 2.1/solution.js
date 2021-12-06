@@ -31,4 +31,4 @@ let findPositionVector = inputArray
         }
     }, { 'distance': 0, 'depth': 0 } )
 
-console.log(findPositionVector)
+console.log(findPositionVector.depth * findPositionVector.distance)
