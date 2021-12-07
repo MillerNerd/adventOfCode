@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let inputArray = fs.readFileSync('inputs/02.txt')
+let inputArray = fs.readFileSync('inputs/03.txt')
   .map(Number)
   .trimEnd()
   .split('\n')
