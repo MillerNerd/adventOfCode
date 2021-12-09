@@ -1,17 +1,20 @@
 const fs = require('fs')
 
-const data = fs.readFileSync('./input.txt', 'utf8').split('\n')
-console.log(data)
-var increased = 0
+const inputArray = fs.readFileSync('./input.txt', 'utf8')
+    .trimEnd()
+    .split('\n')
+    .map(Number)
 
+let windowArray = inputArray
+    .map((element, index, array) => element + array[index + 1] + array[index + 2])
+    .slice(0, -2)
 
+console.log(windowArray.reduce(countDepthIncreases, 0))
 
-data.reduce(depthIncreases)
-function depthIncreases(prev, curr) {
-    if (parseInt(curr) > parseInt(prev)) {
-        increased++
+function countDepthIncreases(count, curr, index, array) {
+    if (curr > array[index - 1]) {
+        return count + 1
+    } else {
+        return count
     }
-    return curr
 }
-
-console.log(increased)
