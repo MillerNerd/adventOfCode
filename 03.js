@@ -4,9 +4,7 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	.toString()
 	.trimEnd()
 	.split('\n')
-	.map( element => {
-		return element.split('')
-	})
+	.map( element => element.split('') )
 
 console.log(inputArray)
 
