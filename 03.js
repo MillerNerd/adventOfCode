@@ -6,7 +6,7 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	.split('\n')
 	.map( element => element.split('') )
 
-console.log(inputArray)
+// console.log(inputArray)
 
 // let rotateArray = (row, index, array) => {
 // 	row.map( (bit, index, array) => {
@@ -15,18 +15,21 @@ console.log(inputArray)
 // }
 
 let calculateBitSum = (sumArray, curr, index, array) => {
-	curr.map((element, index, array) => {
-		if (element === '1') {
-			sumArray[index]++
-		} else if (element === '0') {
-			sumArray[index]--
-		}
+	sumArray.map( (element, index, array) => {
+		const col = index
+		return inputArray.reduce( (sum, curr, index, array) => {
+			if (curr[col] === '1') {
+				return sum += 1
+			} else  if (curr[col] === '0') {
+				return sum -= 1
+			}
+		}, 0)
 	})
 }
 
 // let rotatedInputArray = inputArray.map(rotateArray)
 // console.log(rotatedInputArray)
 
-let bitSum = inputArray.reduce(
-	calculateBitSum, 
-	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+let bitSum = inputArray.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+console.log(bitSum)
