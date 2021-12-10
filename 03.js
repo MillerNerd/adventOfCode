@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let inputArray = fs.readFileSync('inputs/03.txt')
+let inputArray = fs.readFileSync('inputs/03example.txt')
 	.toString()
 	.trimEnd()
 	.split('\n')
@@ -45,4 +45,4 @@ let solution = inputArray
 	// .reduce(arrayToString, '')
 	.reduce(toBinaryString, '')
 
-console.log(solution)
+console.log(parseInt(solution, 2))
