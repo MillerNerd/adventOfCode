@@ -8,26 +8,25 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 
 console.log(inputArray)
 
-let rotateArray = (row, index, array) => {
-	row.map( (bit, index, array) => {
+// let rotateArray = (row, index, array) => {
+// 	row.map( (bit, index, array) => {
 		
-	})
-}
-
-// let calculateBitSum = (sumArray, curr) => {
-// 	return sumArray
-// 		.reduce( () => {
-// 			if (condition) {
-				
-// 			} else {
-				
-// 			}
 // 	})
 // }
 
-let rotatedInputArray = inputArray.map(rotateArray)
-console.log(rotatedInputArray)
+let calculateBitSum = (sumArray, curr, index, array) => {
+	curr.map((element, index, array) => {
+		if (element === '1') {
+			sumArray[index]++
+		} else if (element === '0') {
+			sumArray[index]--
+		}
+	})
+}
 
-// let bitSum = inputArray.reduce(
-// 	calculateBitSum, 
-// 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+// let rotatedInputArray = inputArray.map(rotateArray)
+// console.log(rotatedInputArray)
+
+let bitSum = inputArray.reduce(
+	calculateBitSum, 
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
