@@ -55,5 +55,5 @@ let epsilon = inputArray
 	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 	.reduce(toEpsilon, '')
 
-console.log(gamma)
-console.log(epsilon)
+console.log(parseInt(gamma, 2))
+console.log(parseInt(epsilon, 2))
