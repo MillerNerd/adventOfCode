@@ -19,6 +19,16 @@ let calculateBitSum = (sumArray) => {
 	})
 }
 
+let isPositive = (prev, curr) => {
+	if (curr > 0) {
+		return '1'
+	} else {
+		return '0'
+	}
+}
+
 let bitSum = inputArray.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
-console.log(bitSum)
+// console.log(bitSum)
+
+
