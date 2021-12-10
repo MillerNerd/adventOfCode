@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-let inputArray = fs.readFileSync('inputs/03example.txt')
+let inputArray = fs.readFileSync('inputs/03.txt')
 	.toString()
 	.trimEnd()
 	.split('\n')
@@ -31,7 +31,7 @@ let arrayToString = (string, curr) => {
 	return string += curr
 }
 
-let toBinaryString = (string, curr) => {
+let gamma = (string, curr) => {
 	if (curr > 0) {
 		return string += '1'
 	} else {
@@ -40,10 +40,7 @@ let toBinaryString = (string, curr) => {
 }
 
 let solution = inputArray
-	.reduce(calculateBitSum, [0, 0, 0, 0, 0])
-	// , 0, 0, 0, 0, 0, 0, 0
-	// .map(isPositive)
-	// .reduce(arrayToString, '')
-	.reduce(toBinaryString, '')
+	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+	.reduce(gamma, '')
 
 console.log(parseInt(solution, 2))
