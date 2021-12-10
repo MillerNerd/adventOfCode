@@ -14,10 +14,10 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 // 	})
 // }
 
-let calculateBitSum = (sumArray, curr, index, array) => {
-	sumArray.map( (element, index, array) => {
+let calculateBitSum = (sumArray) => {
+	return sumArray.map( (_element, index) => {
 		const col = index
-		return inputArray.reduce( (sum, curr, index, array) => {
+		return inputArray.reduce( (sum, curr) => {
 			if (curr[col] === '1') {
 				return sum += 1
 			} else  if (curr[col] === '0') {
