@@ -27,8 +27,13 @@ let isPositive = (element) => {
 	}
 }
 
+let arrayToString = (string, curr) => {
+	return string += curr
+}
+
 let solution = inputArray
 	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 	.map(isPositive)
+	.reduce(arrayToString, '')
 
 console.log(solution)
