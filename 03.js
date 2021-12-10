@@ -40,7 +40,8 @@ let toBinaryString = (string, curr) => {
 }
 
 let solution = inputArray
-	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+	.reduce(calculateBitSum, [0, 0, 0, 0, 0])
+	// , 0, 0, 0, 0, 0, 0, 0
 	// .map(isPositive)
 	// .reduce(arrayToString, '')
 	.reduce(toBinaryString, '')
