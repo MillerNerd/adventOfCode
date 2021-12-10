@@ -10,10 +10,16 @@ let calculateBitSum = (sumArray) => {
 	return sumArray.map( (_element, index) => {
 		const col = index
 		return inputArray.reduce( (sum, curr) => {
-			if (curr[col] === '1') {
-				return sum += 1
-			} else  if (curr[col] === '0') {
-				return sum -= 1
+			switch (curr[col]) {
+				case '1':
+					return sum += 1
+					break
+				case '0':
+					return sum -= 1
+					break
+				default:
+					console.error('Invalid', curr)
+					break
 			}
 		}, 0)
 	})
