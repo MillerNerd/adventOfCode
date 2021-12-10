@@ -31,9 +31,18 @@ let arrayToString = (string, curr) => {
 	return string += curr
 }
 
+let toBinaryString = (string, curr) => {
+	if (curr > 0) {
+		return string += '1'
+	} else {
+		return string += '0'
+	}
+}
+
 let solution = inputArray
 	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-	.map(isPositive)
-	.reduce(arrayToString, '')
+	// .map(isPositive)
+	// .reduce(arrayToString, '')
+	.reduce(toBinaryString, '')
 
 console.log(solution)
