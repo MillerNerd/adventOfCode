@@ -31,7 +31,7 @@ let arrayToString = (string, curr) => {
 	return string += curr
 }
 
-let gamma = (string, curr) => {
+let toGamma = (string, curr) => {
 	if (curr > 0) {
 		return string += '1'
 	} else {
@@ -39,8 +39,21 @@ let gamma = (string, curr) => {
 	}
 }
 
-let solution = inputArray
-	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-	.reduce(gamma, '')
+let toEpsilon = (string, curr) => {
+	if (curr < 0) {
+		return string += '1'
+	} else {
+		return string += '0'
+	}
+}
 
-console.log(parseInt(solution, 2))
+let gamma = inputArray
+	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+	.reduce(toGamma, '')
+
+let epsilon = inputArray
+	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+	.reduce(toEpsilon, '')
+
+console.log(gamma)
+console.log(epsilon)
