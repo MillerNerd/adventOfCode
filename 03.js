@@ -4,7 +4,7 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	.toString()
 	.trimEnd()
 	.split('\n')
-	.map( element => element.split('') )
+	// .map( element => element.split('') )
 
 let calculateBitSum = (sumArray) => {
 	return sumArray.map( (_element, index) => {
