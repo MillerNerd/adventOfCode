@@ -61,4 +61,6 @@ let epsilon = inputArray
 	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 	.reduce(toEpsilon, '')
 
-console.log( parseInt(gamma, 2) * parseInt(epsilon, 2) )
+console.log( 'Gamma rate: ', parseInt(gamma, 2))
+console.log( 'Epsilon rate: ', parseInt(epsilon, 2))
+console.log( 'Power conumption: ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
