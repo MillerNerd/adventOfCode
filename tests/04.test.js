@@ -1,3 +1,4 @@
+import exp from 'constants'
 import * as solution from '../04.js'
 
 describe('part1', () => {
@@ -13,6 +14,11 @@ describe('part1', () => {
 	test('numberCallArray is array of ints', () => {
 		expect(testData.numberCallArray).toEqual([
 			7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
+		])
+	})
+	test('cards is an array of 2D arrays of objects', () => {
+		expect(testData.cards).toEqual([
+			[{'value': 22}]
 		])
 	})
 })
