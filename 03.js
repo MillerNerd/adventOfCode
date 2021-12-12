@@ -6,7 +6,7 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	.split('\n')
 	// .map( element => element.split('') )
 
-let sumColumn = (object, curr, index) => {
+let sumColumn = (object, curr) => {
 	switch (curr[object.col]) {
 		case '1':
 			return { 'sum': (object.sum + 1), 'col': object.col }
