@@ -18,7 +18,25 @@ describe('part1', () => {
 	})
 	test('cards is an array of 2D arrays of objects', () => {
 		expect(testData.cards).toEqual([
-			[{'value': 22}]
+			[
+				[{"value":22,"marked":false},{"value":13,"marked":false},{"value":17,"marked":false},{"value":11,"marked":false},{"value":0,"marked":false}],
+				[{"value":8,"marked":false},{"value":2,"marked":false},{"value":23,"marked":false},{"value":4,"marked":false},{"value":24,"marked":false}],
+				[{"value":21,"marked":false},{"value":9,"marked":false},{"value":14,"marked":false},{"value":16,"marked":false},{"value":7,"marked":false}],
+				[{"value":6,"marked":false},{"value":10,"marked":false},{"value":3,"marked":false},{"value":18,"marked":false},{"value":5,"marked":false}],
+				[{"value":1,"marked":false},{"value":12,"marked":false},{"value":20,"marked":false},{"value":15,"marked":false},{"value":19,"marked":false}]
+			],[
+				[{"value":3,"marked":false},{"value":15,"marked":false},{"value":0,"marked":false},{"value":2,"marked":false},{"value":22,"marked":false}],
+				[{"value":9,"marked":false},{"value":18,"marked":false},{"value":13,"marked":false},{"value":17,"marked":false},{"value":5,"marked":false}],
+				[{"value":19,"marked":false},{"value":8,"marked":false},{"value":7,"marked":false},{"value":25,"marked":false},{"value":23,"marked":false}],
+				[{"value":20,"marked":false},{"value":11,"marked":false},{"value":10,"marked":false},{"value":24,"marked":false},{"value":4,"marked":false}],
+				[{"value":14,"marked":false},{"value":21,"marked":false},{"value":16,"marked":false},{"value":12,"marked":false},{"value":6,"marked":false}]
+			],[
+				[{"value":14,"marked":false},{"value":21,"marked":false},{"value":17,"marked":false},{"value":24,"marked":false},{"value":4,"marked":false}],
+				[{"value":10,"marked":false},{"value":16,"marked":false},{"value":15,"marked":false},{"value":9,"marked":false},{"value":19,"marked":false}],
+				[{"value":18,"marked":false},{"value":8,"marked":false},{"value":23,"marked":false},{"value":26,"marked":false},{"value":20,"marked":false}],
+				[{"value":22,"marked":false},{"value":11,"marked":false},{"value":13,"marked":false},{"value":6,"marked":false},{"value":5,"marked":false}],
+				[{"value":2,"marked":false},{"value":0,"marked":false},{"value":12,"marked":false},{"value":3,"marked":false},{"value":7,"marked":false}]
+			]
 		])
 	})
 })

@@ -13,7 +13,9 @@ class Data {
 			.slice(1)
 			.map((card) => { 
 				return card.split(/\n/).map((row) => {
-					return row.trim().split(/\s+/)
+					return row.trim().split(/\s+/).map((cell) => {
+						return { 'value': parseInt(cell), 'marked': false }
+					})
 				})
 			})
 			// .split(/\n/)
@@ -22,6 +24,6 @@ class Data {
 }
 
 let test = new Data('tests/04.txt')
-console.log(test.cards)
+console.log(JSON.stringify(test.cards))
 
 export { Data }
