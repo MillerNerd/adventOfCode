@@ -11,7 +11,11 @@ class Data {
 			.map(Number)
 		this.cards = this.inputArray
 			.slice(1)
-			.map((card) => { return card.split(/\n/) })
+			.map((card) => { 
+				return card.split(/\n/).map((row) => {
+					return row.split(/\s+/)
+				})
+			})
 			// .split(/\n/)
 			// .split(/\s/)
 	}
