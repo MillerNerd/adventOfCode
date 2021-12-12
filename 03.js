@@ -40,10 +40,6 @@ let toEpsilon = (string, curr) => {
 	}
 }
 
-// let gamma = inputArray
-// 	.reduce(calculateBitSum, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-// 	.reduce(toGamma, '')
-
 let gamma = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	.map(popSumArray)
 	.reduce(toGamma, '')
