@@ -18,8 +18,6 @@ class Data {
 					})
 				})
 			})
-			// .split(/\n/)
-			// .split(/\s/)
 	}
 }
 
