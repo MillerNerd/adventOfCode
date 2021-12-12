@@ -7,7 +7,6 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	// .map( element => element.split('') )
 
 let sumColumn = (object, curr, index) => {
-	// index > 990 ? console.log(object.sum) : null
 	switch (curr[object.col]) {
 		case '1':
 			return { 'sum': (object.sum + 1), 'col': object.col }
