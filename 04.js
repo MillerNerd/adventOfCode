@@ -11,7 +11,8 @@ class Data {
 			.map(Number)
 		this.cards = this.inputArray
 			.slice(1)
-			.split(/\n/)
+			.map((card) => { return card.split(/\n/) })
+			// .split(/\n/)
 			// .split(/\s/)
 	}
 }
