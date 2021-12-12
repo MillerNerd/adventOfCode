@@ -1,4 +1,6 @@
+import { expect } from '@jest/globals'
 import exp from 'constants'
+import { test } from 'jest-circus'
 import * as solution from '../04.js'
 
 describe('part1', () => {
@@ -38,5 +40,8 @@ describe('part1', () => {
 				[{"value":2,"marked":false},{"value":0,"marked":false},{"value":12,"marked":false},{"value":3,"marked":false},{"value":7,"marked":false}]
 			]
 		])
+	})
+	test('winning row returns array of 5 winning numbers', () => {
+		expect(testData.winningRow).toEqual([14, 21, 17, 24, 4])
 	})
 })
