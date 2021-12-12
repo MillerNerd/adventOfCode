@@ -21,10 +21,12 @@ let sumColumn = (object, curr, index) => {
 	}
 }
 
+let popSumArray = (_element, index) => {
+	return inputArray.reduce( sumColumn, {'sum': 0, 'col': index}).sum
+}
+
 let calculateBitSum = (sumArray) => {
-	return sumArray.map( (_element, index) => {
-		return inputArray.reduce( sumColumn, {'sum': 0, 'col': index}).sum
-	})
+	return sumArray.map(popSumArray)
 }
 
 let isPositive = (element) => {
