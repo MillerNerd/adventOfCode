@@ -13,7 +13,7 @@ class Data {
 			.slice(1)
 			.map((card) => { 
 				return card.split(/\n/).map((row) => {
-					return row.split(/\s+/)
+					return row.trim().split(/\s+/)
 				})
 			})
 			// .split(/\n/)
