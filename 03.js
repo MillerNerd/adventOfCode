@@ -6,22 +6,24 @@ let inputArray = fs.readFileSync('inputs/03.txt')
 	.split('\n')
 	// .map( element => element.split('') )
 
+let sumColumn = (object, curr, index) => {
+	// index > 990 ? console.log(object.sum) : null
+	switch (curr[object.col]) {
+		case '1':
+			return { 'sum': (object.sum + 1), 'col': object.col }
+			break
+		case '0':
+			return { 'sum': (object.sum - 1), 'col': object.col }
+			break
+		default:
+			console.error('Invalid', curr)
+			break
+	}
+}
+
 let calculateBitSum = (sumArray) => {
 	return sumArray.map( (_element, index) => {
-		const col = index
-		return inputArray.reduce( (sum, curr) => {
-			switch (curr[col]) {
-				case '1':
-					return sum += 1
-					break
-				case '0':
-					return sum -= 1
-					break
-				default:
-					console.error('Invalid', curr)
-					break
-			}
-		}, 0)
+		return inputArray.reduce( sumColumn, {'sum': 0, 'col': index}).sum
 	})
 }
 
@@ -77,11 +79,11 @@ let count0s = (count, curr) => {
 	}
 }
 
-if (oxygenArray.reduce())
+// if (oxygenArray.reduce())
 
-let oxygenArray = inputArray.map( element => element.split('') )
-for (let i = 0; i < oxygenArray[0].length ; i++){
-	if (oxygenArray.reduce(count1s, 0) > oxygenArray.reduce(count0s, 0)) {
-		oxygenArray = oxygenArray.filter()
-	} 
-}
+// let oxygenArray = inputArray.map( element => element.split('') )
+// for (let i = 0; i < oxygenArray[0].length ; i++){
+// 	if (oxygenArray.reduce(count1s, 0) > oxygenArray.reduce(count0s, 0)) {
+// 		oxygenArray = oxygenArray.filter()
+// 	} 
+// }
