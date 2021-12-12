@@ -27,13 +27,13 @@ let popSumArray = (_element, index) => {
 let commonBit = (element) => element > 0 ? 1 : 0
 let uncommonBit = (element) => element < 0 ? 1 : 0
 
-let gamma = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let gamma = Array(inputArray[0].length).fill(0)
 	.map(popSumArray)
 	.map(commonBit)
 	.map(String)
 	.join('')
 
-let epsilon = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let epsilon = Array(inputArray[0].length).fill(0)
 	.map(popSumArray)
 	.map(uncommonBit)
 	.map(String)
@@ -45,9 +45,13 @@ console.log( 'Power consumption: ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
 
 // if (oxygenArray.reduce())
 
-// let oxygenArray = inputArray.map( element => element.split('') )
-// for (let i = 0; i < oxygenArray[0].length ; i++){
-// 	if (oxygenArray.reduce(count1s, 0) > oxygenArray.reduce(count0s, 0)) {
-// 		oxygenArray = oxygenArray.filter()
-// 	} 
-// }
+let oxygenArray = inputArray.map( x => x.split('') )
+columns = oxygenArray[0].length
+
+for (let col = 0; col < columns; col++){
+	bit = oxygenArray.reduce(sumColumn, {'sum': 0, 'col': col}).sum
+	bit >= 0 ? bit = '1' : bit = '0'
+	oxygenArray = oxygenArray.filter(element => element[col] === bit)
+}
+
+console.log(oxygenArray)
