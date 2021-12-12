@@ -84,4 +84,23 @@ for (let i = 0; i < oxygenArray[0].length ; i++){
 	if (oxygenArray.reduce(count1s, 0) > oxygenArray.reduce(count0s, 0)) {
 		oxygenArray = oxygenArray.filter()
 	} 
+}let count1s = (count, curr) => {
+	if (curr[i] === '1'){
+		return count++
+	}
+}
+
+let count0s = (count, curr) => {
+	if (curr[i] === '0'){
+		return count++
+	}
+}
+
+if (oxygenArray.reduce())
+
+let oxygenArray = inputArray.map( element => element.split('') )
+for (let i = 0; i < oxygenArray[0].length ; i++){
+	if (oxygenArray.reduce(count1s, 0) > oxygenArray.reduce(count0s, 0)) {
+		oxygenArray = oxygenArray.filter()
+	} 
 }
