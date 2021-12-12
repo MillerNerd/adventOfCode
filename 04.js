@@ -6,6 +6,9 @@ class Data {
 			.toString()
 			.trimEnd()
 			.split('\n\n')
+		this.numberCallArray = this.inputArray[0]
+			.split(',')
+			.map(Number)
 	}
 }
 
