@@ -39,9 +39,9 @@ let epsilon = Array(inputArray[0].length).fill(0)
 	.map(String)
 	.join('')
 
-console.log( 'Gamma rate:        ', parseInt(gamma, 2))
-console.log( 'Epsilon rate:      ', parseInt(epsilon, 2))
-console.log( 'Power consumption: ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
+console.log( 'Gamma rate:         ', parseInt(gamma, 2))
+console.log( 'Epsilon rate:       ', parseInt(epsilon, 2))
+console.log( 'Power consumption:  ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
 
 // if (oxygenArray.reduce())
 
@@ -54,4 +54,17 @@ for (let col = 0; col < columns; col++){
 	oxygenArray = oxygenArray.filter(element => element[col] === bit)
 }
 
-console.log(oxygenArray)
+let CO2Array = inputArray.map( x => x.split('') )
+
+for (let col = 0; col < columns; col++){
+	if (CO2Array.length === 1) break
+	bit = CO2Array.reduce(sumColumn, {'sum': 0, 'col': col}).sum
+	bit >= 0 ? bit = '0' : bit = '1'
+	CO2Array = CO2Array.filter(element => element[col] === bit)
+}
+
+let oxygenRating = parseInt(oxygenArray.join('').replaceAll(',', ''), 2)
+let CO2Rating = parseInt(CO2Array.join('').replaceAll(',', ''), 2)
+console.log( 'O2 generator rating:', oxygenRating)
+console.log( 'CO2 scrubber rating:', CO2Rating)
+console.log( 'Life support rating:', oxygenRating * CO2Rating)
