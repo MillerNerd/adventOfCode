@@ -24,45 +24,24 @@ let popSumArray = (_element, index) => {
 	return inputArray.reduce( sumColumn, {'sum': 0, 'col': index}).sum
 }
 
-let toGamma = (string, curr) => {
-	if (curr > 0) {
-		return string += '1'
-	} else {
-		return string += '0'
-	}
-}
-
-let toEpsilon = (string, curr) => {
-	if (curr < 0) {
-		return string += '1'
-	} else {
-		return string += '0'
-	}
-}
+let commonBit = (element) => element > 0 ? 1 : 0
+let uncommonBit = (element) => element < 0 ? 1 : 0
 
 let gamma = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	.map(popSumArray)
-	.reduce(toGamma, '')
+	.map(commonBit)
+	.map(String)
+	.join('')
 
 let epsilon = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	.map(popSumArray)
-	.reduce(toEpsilon, '')
+	.map(uncommonBit)
+	.map(String)
+	.join('')
 
-console.log( 'Gamma rate: ', parseInt(gamma, 2))
-console.log( 'Epsilon rate: ', parseInt(epsilon, 2))
-console.log( 'Power conumption: ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
-
-let count1s = (count, curr) => {
-	if (curr[i] === '1'){
-		return count++
-	}
-}
-
-let count0s = (count, curr) => {
-	if (curr[i] === '0'){
-		return count++
-	}
-}
+console.log( 'Gamma rate:        ', parseInt(gamma, 2))
+console.log( 'Epsilon rate:      ', parseInt(epsilon, 2))
+console.log( 'Power consumption: ', parseInt(gamma, 2) * parseInt(epsilon, 2) )
 
 // if (oxygenArray.reduce())
 
