@@ -24,22 +24,6 @@ let popSumArray = (_element, index) => {
 	return inputArray.reduce( sumColumn, {'sum': 0, 'col': index}).sum
 }
 
-let calculateBitSum = (sumArray) => {
-	return sumArray.map(popSumArray)
-}
-
-let isPositive = (element) => {
-	if (element > 0) {
-		return '1'
-	} else {
-		return '0'
-	}
-}
-
-let arrayToString = (string, curr) => {
-	return string += curr
-}
-
 let toGamma = (string, curr) => {
 	if (curr > 0) {
 		return string += '1'
