@@ -2,6 +2,7 @@ import * as fs from 'fs'
 
 class Data {
 	constructor(inputpath) {
+		let arrayRotator = array => array[ 0 ].map((_, colIndex) => array.map(row => row[ colIndex ]))
 		this.inputArray = fs.readFileSync(inputpath)
 			.toString()
 			.trimEnd()
@@ -20,7 +21,7 @@ class Data {
 			})
 		// this.winningRow = 
 		this.isWinner = card => card.foreach( row => {
-			
+
 		})
 	}
 }
