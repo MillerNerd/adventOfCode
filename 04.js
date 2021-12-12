@@ -18,6 +18,10 @@ class Data {
 					})
 				})
 			})
+		// this.winningRow = 
+		this.isWinner = card => card.foreach( row => {
+			
+		})
 	}
 }
 

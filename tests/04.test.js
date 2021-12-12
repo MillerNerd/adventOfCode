@@ -41,7 +41,30 @@ describe('part1', () => {
 			]
 		])
 	})
-	test('winning row returns array of 5 winning numbers', () => {
-		expect(testData.winningRow).toEqual([14, 21, 17, 24, 4])
-	})
+	// test('winning row returns array of 5 winning numbers', () => {
+	// 	expect(testData.winningRow).toEqual([14, 21, 17, 24, 4])
+	// })
+	test('isWinner returns whether given card has won', () => {
+		expect(testData.isWinner([
+			[{"value":22,"marked":false},{"value":13,"marked":false},{"value":17,"marked":true},{"value":11,"marked":true},{"value":0,"marked":true}],
+			[{"value":8,"marked":false},{"value":2,"marked":true},{"value":23,"marked":true},{"value":4,"marked":true},{"value":24,"marked":false}],
+			[{"value":21,"marked":true},{"value":9,"marked":true},{"value":14,"marked":true},{"value":16,"marked":false},{"value":7,"marked":true}],
+			[{"value":6,"marked":false},{"value":10,"marked":false},{"value":3,"marked":false},{"value":18,"marked":false},{"value":5,"marked":true}],
+			[{"value":1,"marked":false},{"value":12,"marked":false},{"value":20,"marked":false},{"value":15,"marked":false},{"value":19,"marked":false}]
+		])).toEqual(false)
+		expect(testData.isWinner([
+			[{"value":3,"marked":false},{"value":15,"marked":false},{"value":0,"marked":true},{"value":2,"marked":true},{"value":22,"marked":false}],
+			[{"value":9,"marked":true},{"value":18,"marked":false},{"value":13,"marked":false},{"value":17,"marked":true},{"value":5,"marked":true}],
+			[{"value":19,"marked":false},{"value":8,"marked":false},{"value":7,"marked":true},{"value":25,"marked":false},{"value":23,"marked":true}],
+			[{"value":20,"marked":false},{"value":11,"marked":true},{"value":10,"marked":false},{"value":24,"marked":true},{"value":4,"marked":true}],
+			[{"value":14,"marked":true},{"value":21,"marked":true},{"value":16,"marked":false},{"value":12,"marked":false},{"value":6,"marked":false}]
+		])).toEqual(false)
+		expect(testData.isWinner([
+			[{"value":14,"marked":true},{"value":21,"marked":true},{"value":17,"marked":true},{"value":24,"marked":true},{"value":4,"marked":true}],
+			[{"value":10,"marked":false},{"value":16,"marked":false},{"value":15,"marked":false},{"value":9,"marked":true},{"value":19,"marked":false}],
+			[{"value":18,"marked":false},{"value":8,"marked":false},{"value":23,"marked":true},{"value":26,"marked":false},{"value":20,"marked":false}],
+			[{"value":22,"marked":false},{"value":11,"marked":true},{"value":13,"marked":false},{"value":6,"marked":false},{"value":5,"marked":true}],
+			[{"value":2,"marked":true},{"value":0,"marked":true},{"value":12,"marked":false},{"value":3,"marked":false},{"value":7,"marked":true}]
+		]))
+	}
 })
