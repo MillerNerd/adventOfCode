@@ -1,8 +1,12 @@
 const fs = require('fs')
 
-let inputArray = fs.readFileSync('tests/04.txt')
-  .toString()
-  .trimEnd()
-  .split('\n\n')
+class Data {
+	constructor(inputpath) {
+		this.inputArray = fs.readFileSync(inputpath)
+			.toString()
+			.trimEnd()
+			.split('\n\n')
+	}
+}
 
-console.log(inputArray)
+export { Data }
