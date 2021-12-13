@@ -1,6 +1,3 @@
-import { expect } from '@jest/globals'
-import exp from 'constants'
-import { test } from 'jest-circus'
 import * as solution from '../04.js'
 
 describe('part1', () => {
