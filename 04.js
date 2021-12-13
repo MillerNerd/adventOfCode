@@ -21,8 +21,8 @@ class Data {
 			})
 		this.winningRow = 
 		this.isWinner = card => {
-			return (card.some( row => { return row.every( cell => cell.marked )}) || 
-				this.arrayRotator(card).some( row => { return row.every( cell => cell.marked )}))
+			return (card.some( row => { return row.every( cell => cell.marked ) } ) || 
+				this.arrayRotator(card).some( row => { return row.every( cell => cell.marked ) } ))
 		}
 	}
 }
