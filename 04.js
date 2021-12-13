@@ -27,6 +27,5 @@ class Data {
 }
 
 let test = new Data('tests/04.txt')
-console.log(JSON.stringify(test.cards))
 
 export { Data }
