@@ -63,6 +63,13 @@ describe('part1', () => {
 			[{"value":22,"marked":false},{"value":11,"marked":true},{"value":13,"marked":false},{"value":6,"marked":false},{"value":5,"marked":true}],
 			[{"value":2,"marked":true},{"value":0,"marked":true},{"value":12,"marked":false},{"value":3,"marked":false},{"value":7,"marked":true}]
 		])).toEqual(true)
+		expect(testData.isWinner([
+			[{"value":14,"marked":true},{"value":21,"marked":false},{"value":17,"marked":true},{"value":24,"marked":true},{"value":4,"marked":false}],
+			[{"value":10,"marked":false},{"value":16,"marked":false},{"value":15,"marked":true},{"value":9,"marked":true},{"value":19,"marked":false}],
+			[{"value":18,"marked":false},{"value":8,"marked":false},{"value":23,"marked":true},{"value":26,"marked":false},{"value":20,"marked":false}],
+			[{"value":22,"marked":false},{"value":11,"marked":true},{"value":13,"marked":true},{"value":6,"marked":false},{"value":5,"marked":true}],
+			[{"value":2,"marked":true},{"value":0,"marked":true},{"value":12,"marked":true},{"value":3,"marked":false},{"value":7,"marked":true}]
+		])).toEqual(true)
 	})
 	test('arrayRotator returns rotated array', () => {
 		expect(testData.arrayRotator([
