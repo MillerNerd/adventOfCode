@@ -23,6 +23,11 @@ class Data {
 			return (card.some( row => { return row.every( cell => cell.marked ) } ) || 
 				this.arrayRotator(card).some( row => { return row.every( cell => cell.marked ) } ))
 		}
+		this.callNumbers = () => {
+			this.numberCallArray.some( calledNumber => {
+
+			})
+		}
 	}
 }
 
